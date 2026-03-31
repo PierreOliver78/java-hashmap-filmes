@@ -1,12 +1,12 @@
 package com.pierre.hashfilmes.model;
 
-public class Filmes {
+public class Filme {
 
 	private String titulo;
 	private String genero;
 	private double nota;
 
-	public void Filme(String titulo, String genero, double nota) {
+	public Filme(String titulo, String genero, double nota) {
 
 		this.titulo = titulo;
 		this.genero = genero;
