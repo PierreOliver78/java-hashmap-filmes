@@ -1,6 +1,7 @@
 package com.pierre.hashmapfilmes.main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.pierre.hashfilmes.model.Filme;
@@ -30,14 +31,38 @@ public class TesteFilmes {
 		filmes.add(filme07);
 		filmes.add(filme08);
 		
+		/*
 		for (Filme filme : filmes) {
 			
-			System.out.println("Títulos: " + filme.getTitulo());
+			
+		}
+		*/
+		
+		HashMap<String, List<Filme>> generoFilme = new HashMap<>();
+		
+		
+		generoFilme.put("Ficção", new ArrayList<>());
+		generoFilme.put("Drama", new ArrayList<>());
+		generoFilme.put("Suspense", new ArrayList<>());
+		generoFilme.put("Aventura", new ArrayList<>());
+		
+		
+		for (Filme filme : filmes) {
+			generoFilme.get(filme.getGenero()).add(filme);
+		}
+		
+		for (String genero : generoFilme.keySet()) {
+			System.out.println("******* " + genero + " *******");
+			System.out.println();
+			
+			for (Filme filme : generoFilme.get(genero)) {
+				System.out.println("Filme: " + filme.getTitulo() + " | " + "Nota: " + filme.getNota());
+			}
+			System.out.println();
 		}
 		
 		
 		
-			
 	}
 
 }
